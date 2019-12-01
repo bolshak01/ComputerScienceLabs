@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import NavBar from "./components/navBar/NavBarWrapper";
+import LabDescription from "./components/navBar/LabDescription";
+import {labs} from "./labs";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [selectedLabIndex, setSelectedLabIndex] = React.useState(0);
+    const selectLab = (index) => {
+        setSelectedLabIndex(index);
+    };
+
+    return (
+        <div className="App">
+            <NavBar
+                selectLab={selectLab}
+                selectedLabIndex={selectedLabIndex}
+            />
+            <LabDescription
+                description={labs[selectedLabIndex].description}
+            />
+        </div>
+    );
 }
 
 export default App;
