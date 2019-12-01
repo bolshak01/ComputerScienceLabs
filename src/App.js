@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from "./components/navBar/NavBarWrapper";
 import LabDescription from "./components/navBar/LabDescription";
 import {labs} from "./labs";
+import LabSelector from "./components/labs/LabSelector";
 
 function App() {
     const [selectedLabIndex, setSelectedLabIndex] = React.useState(0);
@@ -18,6 +19,9 @@ function App() {
             />
             <LabDescription
                 description={labs[selectedLabIndex].description}
+            />
+            <LabSelector
+                index={selectedLabIndex}
             />
         </div>
     );
