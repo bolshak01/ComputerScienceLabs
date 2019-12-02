@@ -20,6 +20,7 @@ function App() {
             <LabDescription
                 description={labs[selectedLabIndex].description}
             />
+            <br/>
             <LabSelector
                 index={selectedLabIndex}
             />
