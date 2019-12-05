@@ -1,0 +1,13 @@
+table {
+    margin: auto;
+    border-collapse: collapse;
+}
+td {
+    border: 1px solid black;
+}
+.doButton {
+    margin: 10px;
+}
+.result {
+    border: 2px solid black;
+}
