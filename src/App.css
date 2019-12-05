@@ -1,3 +1,27 @@
 .App {
   text-align: center;
 }
+
+table {
+  margin: auto;
+  border-collapse: collapse;
+}
+
+td {
+  border: 1px solid black;
+}
+
+.doButton {
+  margin: 10px;
+}
+
+.result {
+  border: 2px solid black;
+}
+
+.message {
+  margin: auto;
+  width: 300px;
+  height: 75px;
+  background-color: rgba(0, 0, 250, 0.5);
+}

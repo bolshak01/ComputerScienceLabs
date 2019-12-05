@@ -1,5 +1,4 @@
 import React from 'react';
-import './index.css';
 
 export default function Matrix() {
     const [size, setSize] = React.useState({width: 1, height: 1});
