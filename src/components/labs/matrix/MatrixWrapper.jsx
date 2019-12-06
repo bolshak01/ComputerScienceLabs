@@ -47,6 +47,7 @@ export default function Matrix() {
                 }
             }
             list.push(value);
+            list.sort()
         }
         return list;
     };

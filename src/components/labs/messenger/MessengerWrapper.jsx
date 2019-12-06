@@ -16,8 +16,22 @@ export default function Messenger() {
 
     const addMessageInfo = () => {
         const info = messageInfo;
-        info.push({ message: currentMessage, userName: currentName });
+        info.push({ message: hashMessage(), userName: currentName });
         setMessageInfo(info);
+    };
+
+    const hashMessage = () => {
+        const message = currentMessage;
+        let newMessage = '';
+        for (let i = 0; i < message.length; i++) {
+            newMessage += createNewSymbol(message, i);
+        }
+        return newMessage;
+    };
+
+    const createNewSymbol = (message, i) => {
+        const code = message.charCodeAt(i);
+        return String.fromCharCode(generateNewCode(code));
     };
 
     const handleChange = (e) => {
@@ -31,6 +45,46 @@ export default function Messenger() {
             default:
                 alert('Ошибка!');
         }
+    };
+
+    const generateNewCode = (code) => {
+        if (code === 120) {
+            return 97;
+        }
+        if (code === 121) {
+            return 98;
+        }
+        if (code === 122) {
+            return 99;
+        }
+        if (code === 88) {
+            return 65;
+        }
+        if (code === 89) {
+            return 66;
+        }
+        if (code === 90) {
+            return 67;
+        }
+        if (code === 1101) {
+            return 1072;
+        }
+        if (code === 1102) {
+            return 1073;
+        }
+        if (code === 1103) {
+            return 1074;
+        }
+        if (code === 1069) {
+            return 1040;
+        }
+        if (code === 1070) {
+            return 1041;
+        }
+        if (code === 1071) {
+            return 1042;
+        }
+        return code + 3;
     };
 
     return (
